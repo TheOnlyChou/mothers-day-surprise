@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bonne fête maman</title>
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components/buttons.css" />
+  <link rel="stylesheet" href="css/components/gift.css" />
+  <link rel="stylesheet" href="css/components/envelope.css" />
+  <link rel="stylesheet" href="css/components/letter.css" />
+  <link rel="stylesheet" href="css/components/final.css" />
+  <link rel="stylesheet" href="css/components/chiikawa.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <div class="background">
+    <span class="flower flower-1">✿</span>
+    <span class="flower flower-2">✽</span>
+    <span class="flower flower-3">✿</span>
+    <span class="flower flower-4">✽</span>
+    <span class="heart heart-1">♥</span>
+    <span class="heart heart-2">♥</span>
+  </div>
+
+  <main class="app" aria-live="polite">
+    <div class="progress" aria-label="Progression">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <section class="scene scene-intro active" data-scene="0">
+      <p class="eyebrow">Pour la meilleure des mamans</p>
+      <h1>Bonne fête maman</h1>
+      <p class="intro-text">
+        J’ai préparé un petit cadeau pour toi. Il n’est pas immense,
+        mais il a été fait avec beaucoup d’affection.
+      </p>
+      <div class="chiikawa-photo-card intro-chiikawa-card" aria-hidden="true">
+        <img
+          src="img/chikawa_love.png"
+          alt="Chiikawa avec des cœurs"
+        />
+      </div>
+      <button class="primary-btn" id="startBtn">Découvrir le cadeau</button>
+    </section>
+
+    <section class="scene scene-gift" data-scene="1">
+      <p class="eyebrow">Étape 1</p>
+      <h2>Un cadeau rien que pour toi</h2>
+      <p class="hint">Clique sur le cadeau pour l’ouvrir.</p>
+
+      <div class="gift" id="gift" role="button" tabindex="0" aria-label="Ouvrir le cadeau">
+        <div class="gift-lid">
+          <span class="lid-ribbon"></span>
+        </div>
+        <div class="gift-box">
+          <span class="vertical-ribbon"></span>
+          <span class="horizontal-ribbon"></span>
+        </div>
+        <div class="gift-glow"></div>
+        <div class="gift-tag">Pour maman</div>
+      </div>
+    </section>
+
+    <section class="scene scene-envelope" data-scene="2">
+      <p class="eyebrow">Étape 2</p>
+      <h2>Une enveloppe est apparue</h2>
+      <p class="hint">Clique sur l’enveloppe pour faire sortir la lettre.</p>
+
+      <div class="envelope-wrap">
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Ouvrir l’enveloppe">
+          <div class="env-shadow"></div>
+          <div class="env-back"></div>
+
+          <div class="letter-peek">
+            <div class="letter-peek-inner">
+              <p class="letter-peek-title">Maman</p>
+              <div class="letter-line"></div>
+              <div class="letter-line short"></div>
+              <div class="letter-line tiny"></div>
+              <p class="letter-peek-sign">Avec amour</p>
+            </div>
+          </div>
+
+          <div class="env-left"></div>
+          <div class="env-right"></div>
+          <div class="env-front"></div>
+          <div class="env-flap"></div>
+          <div class="wax-seal">♥</div>
+        </div>
+
+        <img
+          class="chiikawa-gif chiikawa-love-letter"
+          src="img/chikawa_love_letter.gif"
+          alt="Chiikawa with a love letter"
+        />
+      </div>
+
+      <button class="primary-btn hidden" id="readLetterBtn">Lire la lettre</button>
+    </section>
+
+    <section class="scene scene-letter" data-scene="3">
+      <p class="eyebrow">Ta lettre</p>
+
+      <article class="letter-paper">
+        <h2>Maman,</h2>
+        <p>
+          Je voulais te faire quelque chose d’un peu différent cette année,
+          pas seulement un message rapide, mais une petite attention
+          que tu peux ouvrir comme une vraie lettre.
+        </p>
+        <p>
+          Merci pour tout ce que tu fais pour moi, même les choses que je ne remarque
+          pas toujours sur le moment. Merci pour ta patience, ton soutien,
+          tes conseils, et aussi pour les moments où tu me rappelles à l’ordre,
+          même si je fais parfois semblant de ne pas apprécier.
+        </p>
+        <p>
+          Je suis fier d’être ton fils. J’espère que ce petit cadeau te fera sourire,
+          parce que tu mérites bien plus qu'un site, mais j’avais envie
+          de te préparer quelque chose de personnel.
+        </p>
+        <p class="signature">Je t’aime,<br />ton fils</p>
+      </article>
+
+      <button class="primary-btn" id="letterBtn">Continuer</button>
+    </section>
+
+    <section class="scene scene-question" data-scene="4">
+      <div class="chiikawa-question-card" aria-hidden="true">
+        <img
+          id="questionMascot"
+          class="chiikawa-gif chiikawa-thinking"
+          src="img/chiikawa_thinking.gif"
+          alt="Chiikawa thinking"
+        />
+      </div>
+
+      <p class="eyebrow">Question officielle</p>
+      <h2>Tu acceptes ton cadeau ?</h2>
+      <p class="question-text">
+        Il contient un câlin, un moment ensemble, et mon éternelle reconnaissance.
+        Bon, éternelle au moins jusqu’au prochain repas.
+      </p>
+
+      <div class="answer-area">
+        <button class="yes-btn" id="yesBtn">Oui</button>
+        <button class="no-btn" id="noBtn">Non</button>
+      </div>
+
+      <p class="no-message" id="noMessage"></p>
+
+      <div class="chiikawa-photo-card question-reaction-card" id="questionReactionCard" aria-hidden="true">
+        <img
+          id="questionReactionImage"
+          src="img/chikawa_sad_angry.jpg"
+          alt="Chiikawa triste et énervé"
+        />
+        <p>Chiikawa n’est pas d’accord avec ce choix.</p>
+      </div>
+    </section>
+
+    <section class="scene scene-final" data-scene="5">
+      <div class="confetti" id="confetti"></div>
+
+      <p class="eyebrow">Cadeau validé</p>
+      <h2>Bonne fête maman ❤️</h2>
+      <p class="final-text">
+        Merci d’être là pour moi. J’espère que cette petite surprise t’a fait sourire.
+      </p>
+
+      <div class="chiikawa-photo-card final-chiikawa-card" aria-hidden="true">
+        <img
+          src="img/chikawa_thumbs_up.jpg"
+          alt="Chiikawa thumbs up"
+        />
+        <p>Mission fête des mères validée.</p>
+      </div>
+
+      <div class="voucher">
+        <p class="voucher-title">Bon cadeau</p>
+        <p>Ce bon donne droit à :</p>
+        <ul>
+          <li>un câlin</li>
+          <li>un moment ensemble</li>
+          <li>une aide sans râler pendant au moins 10 minutes</li>
+          <li>un vrai “merci maman” sincère</li>
+        </ul>
+        <p class="voucher-signature">Signé : ton fils</p>
+      </div>
+
+      <button class="secondary-btn" id="restartBtn">Revoir la surprise</button>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/scenes.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/gift.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/question.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

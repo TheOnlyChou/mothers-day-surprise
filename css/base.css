@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--brown);
+  background:
+    radial-gradient(circle at top left, rgba(212, 111, 141, 0.16), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(240, 201, 141, 0.24), transparent 34%),
+    linear-gradient(135deg, #fdf6ef, #f9edf1 48%, #fef9f4);
+}
+
+button {
+  font: inherit;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.flower,
+.heart {
+  position: absolute;
+  opacity: 0.23;
+  animation: float 8s ease-in-out infinite;
+}
+
+.flower {
+  color: #d67d99;
+  font-size: clamp(2rem, 6vw, 4.8rem);
+}
+
+.heart {
+  color: #e2b56d;
+  font-size: clamp(1.4rem, 4vw, 2.8rem);
+}
+
+.flower-1 { top: 7%; left: 8%; }
+.flower-2 { top: 15%; right: 10%; animation-delay: 1.4s; }
+.flower-3 { bottom: 11%; left: 11%; animation-delay: 2.3s; }
+.flower-4 { bottom: 14%; right: 9%; animation-delay: 3.5s; }
+.heart-1 { top: 56%; left: 5%; animation-delay: 1.2s; }
+.heart-2 { top: 70%; right: 6%; animation-delay: 2.8s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}

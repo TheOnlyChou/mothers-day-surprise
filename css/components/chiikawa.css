@@ -1,0 +1,172 @@
+.chiikawa-gif {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.chiikawa-photo-card {
+  width: min(220px, 70vw);
+  padding: 10px;
+  border-radius: 22px;
+  background: rgba(255, 250, 244, 0.92);
+  border: 1px solid rgba(117, 82, 65, 0.12);
+  box-shadow: 0 16px 34px rgba(117, 82, 65, 0.14);
+}
+
+.chiikawa-photo-card img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.chiikawa-photo-card p {
+  margin: 8px 0 0;
+  color: var(--brown-soft);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.envelope-wrap {
+  position: relative;
+}
+
+.chiikawa-love-letter {
+  position: absolute;
+  right: clamp(8px, 2vw, 18px);
+  bottom: clamp(6px, 1.4vw, 16px);
+  z-index: 4;
+  width: clamp(105px, 22vw, 130px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.92);
+  transform-origin: bottom right;
+  transition:
+    opacity 0.42s ease,
+    transform 0.42s ease;
+}
+
+.envelope.open + .chiikawa-love-letter {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.chiikawa-question-card {
+  width: 180px;
+  height: 180px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 4px;
+  padding: 16px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 251, 241, 0.96) 0%, rgba(255, 251, 241, 0.72) 26%, transparent 27%),
+    linear-gradient(160deg, #fff8ef 0%, #f9e2ea 58%, #f4d9ae 100%);
+  box-shadow: 0 16px 30px rgba(117, 82, 65, 0.14);
+}
+
+.intro-chiikawa-card {
+  transform: rotate(-2deg);
+  animation: chiikawaFloat 3.2s ease-in-out infinite;
+}
+
+.final-chiikawa-card {
+  transform: rotate(2deg);
+}
+
+.question-reaction-card {
+  width: min(190px, 68vw);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.94);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.question-reaction-card.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.question-reaction-card img {
+  height: 125px;
+}
+
+.chiikawa-thinking {
+  width: 145px;
+  animation: chiikawaFloat 3.8s ease-in-out infinite;
+}
+
+.chiikawa-thinking.is-surprised {
+  animation: chiikawaShakeSoft 0.45s ease;
+}
+
+@keyframes chiikawaFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+}
+
+@keyframes chiikawaShakeSoft {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+
+  75% {
+    transform: translateX(-2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .chiikawa-love-letter {
+    right: 6px;
+    bottom: -10px;
+    width: clamp(96px, 31vw, 118px);
+  }
+
+  .chiikawa-question-card {
+    width: 164px;
+    height: 164px;
+  }
+
+  .chiikawa-thinking {
+    width: 132px;
+  }
+
+  .chiikawa-photo-card {
+    width: min(200px, 78vw);
+  }
+
+  .chiikawa-photo-card img {
+    height: 136px;
+  }
+
+  .question-reaction-card {
+    width: min(178px, 72vw);
+  }
+
+  .question-reaction-card img {
+    height: 118px;
+  }
+}

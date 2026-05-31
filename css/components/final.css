@@ -1,0 +1,69 @@
+.scene-final {
+  position: relative;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti span {
+  position: absolute;
+  top: -18px;
+  width: 10px;
+  height: 16px;
+  border-radius: 4px;
+  animation: confettiFall 2.8s ease-in forwards;
+}
+
+.confetti span:nth-child(3n) { background: #d46f8d; }
+.confetti span:nth-child(3n + 1) { background: #efc377; }
+.confetti span:nth-child(3n + 2) { background: #e7a7bc; }
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(700px) rotate(420deg);
+    opacity: 0;
+  }
+}
+
+.voucher {
+  width: min(100%, 520px);
+  padding: 28px;
+  border: 2px dashed rgba(212, 111, 141, 0.55);
+  border-radius: 28px;
+  text-align: left;
+  background: #fff8ea;
+  box-shadow: 0 18px 36px rgba(117, 82, 65, 0.12);
+}
+
+.voucher-title {
+  margin: 0 0 10px;
+  color: var(--rose);
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 700;
+  text-align: center;
+}
+
+.voucher p,
+.voucher li {
+  color: var(--brown-soft);
+  line-height: 1.65;
+}
+
+.voucher ul {
+  margin: 12px 0 18px;
+  padding-left: 24px;
+}
+
+.voucher-signature {
+  margin-bottom: 0;
+  color: var(--brown) !important;
+  font-weight: 800;
+  text-align: right;
+}

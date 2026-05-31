@@ -1,0 +1,35 @@
+@media (max-width: 560px) {
+  .app {
+    min-height: 675px;
+    border-radius: 24px;
+  }
+
+  .scene {
+    min-height: 585px;
+  }
+
+  .letter-paper {
+    padding: 24px;
+  }
+
+  .letter-paper::before {
+    left: 18px;
+  }
+
+  .envelope-wrap {
+    height: 315px;
+  }
+
+  .envelope {
+    height: 285px;
+  }
+
+  .letter-peek {
+    width: 224px;
+    height: 164px;
+  }
+
+  .envelope.open .letter-peek {
+    transform: translateX(-50%) translateY(-102px) scale(1.03);
+  }
+}

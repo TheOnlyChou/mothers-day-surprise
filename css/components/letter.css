@@ -1,0 +1,48 @@
+.letter-paper {
+  position: relative;
+  width: min(100%, 620px);
+  padding: clamp(24px, 5vw, 42px);
+  border-radius: 26px;
+  text-align: left;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      rgba(212, 111, 141, 0.12) 32px
+    ),
+    var(--paper);
+  box-shadow: 0 24px 50px rgba(117, 82, 65, 0.14);
+}
+
+.letter-paper::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(212, 111, 141, 0.18);
+}
+
+.letter-paper h2 {
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.letter-paper p {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.signature {
+  margin-bottom: 0;
+  color: var(--rose) !important;
+  font-family: Georgia, serif;
+  font-size: 1.5rem !important;
+  font-style: italic;
+  font-weight: 700;
+  text-align: right;
+}
